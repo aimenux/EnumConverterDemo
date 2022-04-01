@@ -1,17 +1,22 @@
+[![.NET](https://github.com/aimenux/EnumConverterDemo/actions/workflows/ci.yml/badge.svg)](https://github.com/aimenux/EnumConverterDemo/actions/workflows/ci.yml)
+
 # EnumConverterDemo
 ```
 Playing with enum type converters
 ```
 
-In this demo, i m experimenting the use of `EnumConverter` in order to support conversion :
+In this demo, i m experimenting the use of [EnumConverter](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.enumconverter) in order to support conversion :
 >
-- from string enum value to enum value
+:one: from `string enum value` to `enum value`
 >
-- from string enum member value to enum value
+:two: from `string integer enum` value to `enum value`
 >
-- from string integer enum value to enum value
+:three: from `string enum member value` value to `enum value`
 
-Two implementation are provided and benchmarked :
+The built-in implementation EnumConverter don't support the last case ([EnumMember](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.enummemberattribute)).
+
+In order to support all the cases, i m providing two implementations (with/without cache, see benchamrks) :
+
 >
 :one: `StringEnumConverter`
 >
