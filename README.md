@@ -2,20 +2,22 @@
 
 # EnumConverterDemo
 ```
-Playing with enum type converters
+Experimenting enum type converters
 ```
 
-In this demo, i m experimenting the use of [EnumConverter](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.enumconverter) in order to support conversion :
+In this demo, i m experimenting ways of conversion from enums (decorated with [EnumMember](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.enummemberattribute)) to strings
 >
-:pushpin: from `string enum value` to `enum value`
+The enum converter should support the following cases :
 >
-:pushpin: from `string integer enum` value to `enum value`
+:pushpin: From `string enum value` To `enum value`
 >
-:pushpin: from `string enum member value` value to `enum value`
+:pushpin: From `string integer enum` value To `enum value`
+>
+:pushpin: From `string enum member value` value To `enum value`
 
-The built-in implementation EnumConverter don't support the last case ([EnumMember](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.enummemberattribute)).
+The built-in implementation [EnumConverter](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.enumconverter) provided by microsoft don't support the last case about [EnumMember](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.enummemberattribute)
 
-In order to support all the cases, i m providing two implementations (with/without cache, see benchamrks) :
+In order to support all the cases, i m testing and benchmarking two implementations :
 
 >
 :one: `StringEnumConverter`

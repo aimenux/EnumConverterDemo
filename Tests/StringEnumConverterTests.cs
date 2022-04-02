@@ -24,6 +24,7 @@ namespace Tests
         [InlineData("20", Country.Spain)]
         [InlineData("30", Country.Italy)]
         [InlineData("40", Country.Portugal)]
+        [InlineData("99", (Country)99)]
         public void ShouldConvertFromStringToEnum(string stringEnumValue, Country expectedEnumValue)
         {
             // arrange
